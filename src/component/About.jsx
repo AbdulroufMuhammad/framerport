@@ -43,7 +43,7 @@ const About = () => {
   };
 
   return (
-    <div>
+    <div id="about-section">
       <motion.div
         ref={aboutRef}
         variants={containerVariants}
