@@ -1,13 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 const items = [
-  { id: "1", subtitle: "Subtitle 1", title: "Front-End Development" },
-  { id: "2", subtitle: "Subtitle 2", title: "Animations & Interactivity" },
-  { id: "3", subtitle: "Subtitle 1", title: "Problem Solving" },
-  { id: "4", subtitle: "Subtitle 2", title: "Title 2" },
+  {
+    id: "1",
+    subtitle: "Crafting Seamless User Experiences",
+    title: "Front-End Development",
+    talk:"Proficient in HTML, CSS, JavaScript, and modern front-end frameworks like React.js. I specialize in creating intuitive interfaces that users love."
+  },
+  {
+    id: "2",
+    subtitle: "Bringing Your Ideas to Life with Motion",
+    title: "Animations & Interactivity",
+    talk:"Skilled in implementing animations and interactive elements using tools like Framer Motion to bring web applications to life."
+  },
+  {
+    id: "3",
+    subtitle: "Turning Challenges into Opportunities",
+    title: "Problem Solving",
+    talk:"Adept at troubleshooting and solving complex coding challenges. My approach involves breaking down problems and finding elegant solutions."
+  },
+  {
+    id: "4",
+    subtitle: "Designs That Adapt to Every Screen",
+    title: "Responsive Design",
+    talk:" Experienced in designing and developing responsive web applications that work seamlessly across various devices and screen sizes."
+  },
 ];
-
 const Skill = () => {
   const [selectedId, setSelectedId] = useState(null);
 
@@ -20,24 +38,60 @@ const Skill = () => {
     }
   }, [selectedId]);
 
+  // Animation variants for the section header
+  const aboutItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  // Animation variants for skill cards
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+  };
+
   return (
-    <div className="relative flex flex-wrap justify-center items-center min-h-screen p-4">
-      {items.map((item) => (
-        <motion.div
-          key={item.id}
-          layoutId={item.id}
-          onClick={() => setSelectedId(item.id)}
-          className="relative cursor-pointer m-4 p-4 bg-white rounded-2xl shadow-lg transform mt-[40px] transition-all hover:scale-105 hover:shadow-xl"
-          style={{ width: "180px", height: "200px" }}
-        >
-          <motion.h2 className="text-md font-semibold text-gray-800 mt-2">
-            {item.title}
-          </motion.h2>
-          <motion.h5 className="text-xs font-medium text-gray-600">
-            {item.subtitle}
-          </motion.h5>{" "}
-        </motion.div>
-      ))}
+    <div className="relative flex flex-col items-center min-h-screen p-4">
+      <motion.div
+        variants={aboutItemVariants}
+        initial="hidden"
+        animate="visible"
+        className="mb-10 text-white text-3xl text-center lg:text-left"
+      >
+        <h2>Skills & Expertise</h2>
+        <motion.hr
+          variants={aboutItemVariants}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="lg:w-56 w-56 max-md:m-auto border-4 rounded-lg my-4"
+        />
+      </motion.div>
+
+      <div className="flex flex-wrap justify-center items-center">
+        {items.map((item) => (
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 2 }}
+            key={item.id}
+            layoutId={item.id}
+            onClick={() => setSelectedId(item.id)}
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="relative cursor-pointer m-4 text-center pt-8 p-2 border-2  bg-transparent rounded-2xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl"
+            style={{ width: "200px", height: "200px" }}
+          >
+            <motion.h2 className="text-sm inline text-center  font-semibold text-white font-mono mt-2">
+              {item.title}
+              <hr className='border rounded-lg' />
+            </motion.h2>
+            <motion.h2 className="text-[12px] mt-14  text-slate-500 font-light  ">
+              {item.subtitle}
+            </motion.h2>
+          </motion.div>
+        ))}
+      </div>
 
       <AnimatePresence>
         {selectedId && (
@@ -48,14 +102,18 @@ const Skill = () => {
                 <motion.div
                   key={item.id}
                   layoutId={selectedId}
-                  className="bg-white p-2 rounded-2xl shadow-2xl"
+                  className="bg-white p-6 rounded-2xl shadow-2xl relative"
                   style={{ width: "300px", height: "200px" }}
                 >
-                  {/* <motion.h5 className="text-sm font-medium text-gray-600">{item.subtitle}</motion.h5>
-                  <motion.h2 className="text-lg font-semibold text-gray-800 mt-2">{item.title}</motion.h2> */}
+                  <motion.h2 className="text-lg font-semibold text-gray-800 mt-2">
+                    {item.title}
+                  </motion.h2>
+                  <p>
+
+                  </p>
                   <motion.button
                     onClick={() => setSelectedId(null)}
-                    className="mb-14  max-md:top-[15rem] absolute flex flex-1 px-4 py-2 bg-slate-900 text-white rounded-full   hover:bg-slate-500 transition-colors lg:ml "
+                    className="absolute top-4 right-4 px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-500 transition-colors"
                   >
                     X
                   </motion.button>
@@ -70,8 +128,7 @@ const Skill = () => {
 
 export default Skill;
 
-// ### Skills & Expertise
-
-// - **Front-End Development**: Proficient in HTML, CSS, JavaScript, and modern front-end frameworks like React.js. I specialize in creating intuitive interfaces that users love.
-// - **Animations & Interactivity**: Skilled in implementing animations and interactive elements using tools like Framer Motion to bring web applications to life.
-// - **Problem Solving**: Adept at troubleshooting and solving complex coding challenges. My approach involves breaking down problems and finding elegant solutions.
+// Front-End Development: Proficient in HTML, CSS, JavaScript, and modern front-end frameworks like React.js. I specialize in creating intuitive interfaces that users love.
+// Animations & Interactivity: Skilled in implementing animations and interactive elements using tools like Framer Motion to bring web applications to life.
+// Problem Solving: Adept at troubleshooting and solving complex coding challenges. My approach involves breaking down problems and finding elegant solutions.
+// Responsive Design: Experienced in designing and developing responsive web applications that work seamlessly across various devices and screen sizes.

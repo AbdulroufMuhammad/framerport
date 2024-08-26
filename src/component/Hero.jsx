@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import ContactButton from "./Button";
+
 import profile from "../assets/Profile.jpg";
 import Loader from "./Loader"; 
 import '@dotlottie/player-component'; 
+import { Contact } from "./Contactus";
 
 const Hero = () => {
   const [showHero, setShowHero] = useState(false);
@@ -39,17 +40,18 @@ const Hero = () => {
               with Precision and Efficiency.
             </p>
           </div>
-          <div className="flex justify-center mt-20">
-            <ContactButton>
+          <div className="flex justify-center">
+            {/* <ContactButton>
               <a
                 href="mailto:abdulraufmuhammad28@gmail.com"
                 className="w-full h-full"
               >
                 Contact Me
               </a>
-            </ContactButton>
+            </ContactButton> */}
+        <Contact />
           </div>
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center mb-40 pb-32 max-sm:hidden">
             <dotlottie-player
               src="https://lottie.host/b8630a83-180e-44b8-992c-eade775d3134/Baz2c8NrE8.json" // Replace with your own Lottie file URL or local path
               background="transparent"
@@ -57,7 +59,7 @@ const Hero = () => {
               style={{ width: "150px", height: "100px", cursor: "pointer", color: "white" }}
               loop
               autoplay
-              onClick={handleScrollDown} // Add onClick to trigger scroll down
+              onClick={handleScrollDown}
             ></dotlottie-player>
           </div>
         </motion.div>

@@ -5,17 +5,17 @@ import About from "./component/About";
 import Loader from "./component/Loader";
 import Skill from "./component/Skill";
 import '@dotlottie/player-component';
+import{ Contact} from '../src/component/Contactus'
+
 const App = () => {
   const [isLoaderComplete, setIsLoaderComplete] = useState(false);
 
+  // Handle loader completion
   const handleLoaderComplete = () => {
     setIsLoaderComplete(true);
-  };
-
-  // Scroll to top when the component mounts
-  useEffect(() => {
+    // Scroll to top after the loader completes
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  };
 
   return (
     <>
