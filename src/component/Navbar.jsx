@@ -7,7 +7,7 @@ import { faEnvelopeOpen } from "@fortawesome/free-regular-svg-icons";
 import { Contact } from "./Contactus";
 const Navbar = () => {
   return (
-    <nav className=" flex flex-1">
+    <nav className=" flex flex-1 " id="home">
       <div className="flex ml-10 gap-4">
         <motion.div
           initial={{ scale: 0 }}

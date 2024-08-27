@@ -4,4 +4,5 @@
 
 body{
     background: #1f1f1f;
+    scroll-behavior: smooth;
 }

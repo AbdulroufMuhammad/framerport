@@ -5,6 +5,7 @@ import profile from "../assets/Profile.jpg";
 import Loader from "./Loader"; 
 import '@dotlottie/player-component'; 
 import { Contact } from "./Contactus";
+import Navbar from "./Navbar";
 
 const Hero = () => {
   const [showHero, setShowHero] = useState(false);
@@ -21,7 +22,7 @@ const Hero = () => {
     <>
       {!showHero && <Loader onComplete={() => setShowHero(true)} />}
       {showHero && (
-        <motion.div className="relative lg:mt-14">
+        <motion.div className="relative lg:mt-14" >
           <div className="flex justify-center">
             <img
               src={profile}
@@ -33,7 +34,7 @@ const Hero = () => {
           </div>
           <div>
             <h3 className="text-white text-3xl text-center">
-              Hi, I'm Muhammad
+              Hi, I'm Abdulrouf Muhammad
             </h3>
             <p className="font-mono text-white lg:text-2xl mt-4 text-center">
               Building Interactive and Responsive Front-End Solutions, <br />{" "}

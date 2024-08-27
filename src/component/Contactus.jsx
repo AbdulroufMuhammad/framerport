@@ -38,18 +38,18 @@ export function Contact() {
               <Textarea id="message" name="message" placeholder="Your message..." rows={4} />
             </div>
             <div className="mb-6">
-              <Button type="submit" className="w-full">
+              <button type="submit" className="border  hover:bg-slate-600  bg-slate-800 text-center mb-10 text-white p-2.5  rounded-md w-full">
                 Send message
-              </Button>
+              </button>
             </div>
             <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-              <a href="mailto:info@company.com" className="hover:underline">
-                info@company.com
+              <a href="abdulraufmuhammad28@gmail.com" className="hover:underline">
+                abdulraufmuhammad28@gmail.com
               </a>
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              <a href="tel:2124567890" className="hover:underline">
-                212-456-7890
+              <a href="tel:+234 8143754658" className="hover:underline">
+                +234 8143754658
               </a>
             </p>
           </form>

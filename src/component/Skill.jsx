@@ -70,7 +70,7 @@ const Skill = () => {
       <div className="flex flex-wrap justify-center items-center">
         {items.map((item) => (
           <motion.div
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 2 }}
             key={item.id}
             layoutId={item.id}
@@ -79,12 +79,12 @@ const Skill = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="relative cursor-pointer m-6 text-center pt-8 p-2 border-2  bg-transparent rounded-2xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl"
+            className="relative cursor-pointer m-6 text-center pt-4 p-2 border-2  bg-transparent rounded-2xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl"
             style={{ width: "250px", height: "200px" }}
           >
             <motion.h2 className="text-sm inline text-center  font-semibold text-white font-mono mt-2">
               {item.title}
-              <hr className='border rounded-lg' />
+              <hr className='border rounded-lg w-full mx-0' />
             </motion.h2>
             <motion.h2 className="text-[12px] mt-14  text-slate-300 font-monserat  ">
               {item.subtitle}
