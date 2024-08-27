@@ -79,14 +79,14 @@ const Skill = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="relative cursor-pointer m-4 text-center pt-8 p-2 border-2  bg-transparent rounded-2xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl"
-            style={{ width: "200px", height: "200px" }}
+            className="relative cursor-pointer m-6 text-center pt-8 p-2 border-2  bg-transparent rounded-2xl shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl"
+            style={{ width: "250px", height: "200px" }}
           >
             <motion.h2 className="text-sm inline text-center  font-semibold text-white font-mono mt-2">
               {item.title}
               <hr className='border rounded-lg' />
             </motion.h2>
-            <motion.h2 className="text-[12px] mt-14  text-slate-500 font-light  ">
+            <motion.h2 className="text-[12px] mt-14  text-slate-300 font-monserat  ">
               {item.subtitle}
             </motion.h2>
           </motion.div>
@@ -102,14 +102,14 @@ const Skill = () => {
                 <motion.div
                   key={item.id}
                   layoutId={selectedId}
-                  className="bg-white p-6 rounded-2xl shadow-2xl relative"
+                  className="bg-[#030303] p-6 rounded-2xl shadow-2xl relative"
                   style={{ width: "300px", height: "200px" }}
                 >
-                  <motion.h2 className="text-lg font-semibold text-gray-800 mt-2">
+                  <motion.h2 className="text-lg font-semibold text-white mt-2">
                     {item.title}
                   </motion.h2>
-                  <p>
-
+                  <p className="text-[15px] mt-3 font-light text-white">
+                    {item.talk}
                   </p>
                   <motion.button
                     onClick={() => setSelectedId(null)}
@@ -127,8 +127,3 @@ const Skill = () => {
 };
 
 export default Skill;
-
-// Front-End Development: Proficient in HTML, CSS, JavaScript, and modern front-end frameworks like React.js. I specialize in creating intuitive interfaces that users love.
-// Animations & Interactivity: Skilled in implementing animations and interactive elements using tools like Framer Motion to bring web applications to life.
-// Problem Solving: Adept at troubleshooting and solving complex coding challenges. My approach involves breaking down problems and finding elegant solutions.
-// Responsive Design: Experienced in designing and developing responsive web applications that work seamlessly across various devices and screen sizes.

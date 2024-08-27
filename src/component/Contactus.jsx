@@ -6,7 +6,7 @@ import { useState } from "react";
 import { HiEnvelope } from "react-icons/hi2";
 
 export function Contact() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => setIsOpen(false);
 
